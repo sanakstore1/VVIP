@@ -154,7 +154,7 @@ print_install "Membuat direktori xray"
     export IP=$( curl -s https://ipinfo.io/ip/ )
 
 # Change Environment System
-function first_setup(){
+function first_setup() {
     timedatectl set-timezone Asia/Jakarta
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
@@ -312,24 +312,17 @@ CITY=$(cat /root/.city)
 TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
-<b>⚡𝗡𝗢𝗧𝗜𝗙 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗦𝗖𝗥𝗜𝗣𝗧⚡</b>
+<b>⚡AUTOSCRIPT PREMIUM V3⚡</b>
 <code>────────────────────</code>
-<code>User     :</code><code>$username</code>
-<code>IP       :</code><code>$IP</code>
-<code>DOMAIN   :</code><code>$DOMAIN</code>
-<code>ISP      :</code><code>$ISP</code>
-<code>OS       :</code><code>$OS_Name</code>
-<code>RAM      :</code><code>$tram</code>
-<code>CITY     :</code><code>$CITY</code>
-<code>DATE     :</code><code>$DATE</code>
-<code>Time     :</code><code>$TIMEZONE</code>
-<code>Exp Sc.  :</code><code>$exp</code>
+<code>ID     : </code><code>$USRSC</code>
+<code>Domain : </code><code>$domain</code>
+<code>Date   : </code><code>$TIME</code>
+<code>Time   : </code><code>$TIMEZONE</code>
+<code>Ip vps : </code><code>$ipsaya</code>
+<code>Exp Sc : </code><code>$EXPSC</code>
 <code>────────────────────</code>
-<b> SANAK STORE VVIP SCRIPT  </b>
-<code>────────────────────</code>
-<i>Notifications From SanakStore AutoSc</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/kakatiri"}]]}' 
-
+<i>Automatic Notification from Github</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ORDER🐳","url":"https://t.me/Baung2012"},{"text":"GROUP🐬","url":"https://t.me/SANAKSTORE"}]]}'
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
