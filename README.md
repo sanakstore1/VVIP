@@ -3,10 +3,6 @@
 ```
 apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/sanakstore1/VVIP/main/main.sh && chmod +x main.sh && ./main.sh
 ```
-
-## UPDATE SCRIPT
-```
-
 ### WARP
 ```
 wget https://raw.githubusercontent.com/sanakstore1/VVIP/main/warp.sh && chmod +x warp.sh && ./warp.sh
