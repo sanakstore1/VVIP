@@ -79,7 +79,6 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 apt install ruby -y
 gem install lolcat
-apt install curls
 apt install wondershaper -y
 clear
 # REPO    
@@ -154,7 +153,7 @@ print_install "Membuat direktori xray"
     export IP=$( curl -s https://ipinfo.io/ip/ )
 
 # Change Environment System
-function first_setup() {
+function first_setup(){
     timedatectl set-timezone Asia/Jakarta
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
@@ -180,7 +179,7 @@ else
 fi
 }
 
-# SANAK STORE
+# ZERO STORE
 clear
 function nginx_install() {
     # // Checking System
@@ -263,7 +262,7 @@ clear
 
 clear
 #GANTI PASSWORD DEFAULT
-restart_system() {
+restart_system(){
 #IZIN SCRIPT
 curl "ipinfo.io/org?token=7a814b6263b02c" > /root/.isp 
 curl "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
@@ -303,6 +302,8 @@ Exp1=$(curl $izinsc | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
+sts="${Error}"
+fi
 TIMES="10"
 CHATID="2118266757"
 KEY="6561892159:AAEfW_wh32WA3KzJDVrvFDDbtazjcmA2Cc4"
@@ -312,17 +313,24 @@ CITY=$(cat /root/.city)
 TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
-<b>⚡AUTOSCRIPT PREMIUM V3⚡</b>
+<b>⚡𝗡𝗢𝗧𝗜𝗙 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗦𝗖𝗥𝗜𝗣𝗧⚡</b>
 <code>────────────────────</code>
-<code>ID     : </code><code>$USRSC</code>
-<code>Domain : </code><code>$domain</code>
-<code>Date   : </code><code>$TIME</code>
-<code>Time   : </code><code>$TIMEZONE</code>
-<code>Ip vps : </code><code>$ipsaya</code>
-<code>Exp Sc : </code><code>$EXPSC</code>
+<code>User     :</code><code>$username</code>
+<code>IP       :</code><code>$IP</code>
+<code>DOMAIN   :</code><code>$DOMAIN</code>
+<code>ISP      :</code><code>$ISP</code>
+<code>OS       :</code><code>$OS_Name</code>
+<code>RAM      :</code><code>$tram</code>
+<code>CITY     :</code><code>$CITY</code>
+<code>DATE     :</code><code>$DATE</code>
+<code>Time     :</code><code>$TIMEZONE</code>
+<code>Exp Sc.  :</code><code>$exp</code>
 <code>────────────────────</code>
-<i>Automatic Notification from Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ORDER🐳","url":"https://t.me/Baung2012"},{"text":"GROUP🐬","url":"https://t.me/SANAKSTORE"}]]}'
+<b> SANAK STORE VVIP SCRIPT  </b>
+<code>────────────────────</code>
+<i>Notifications From SanakStore AutoSc</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/Baung2012"}]]}' 
+
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
@@ -452,7 +460,7 @@ EOF
 print_success "Konfigurasi Packet"
 }
 
-function ssh() {
+function ssh(){
 clear
 print_install "Memasang Password SSH"
     wget -O /etc/pam.d/common-password "${REPO}files/password"
@@ -528,7 +536,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/dit1304/VVIP/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/Sanakstore1/VVIP/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
@@ -590,7 +598,10 @@ print_success "Dropbear"
 function ins_udpSSH(){
 clear
 print_install "Menginstall Udp-custom"
-wget -q https://raw.githubusercontent.com/sanakstore1/sanakstore/main/udp-custom.sh &&  chmod +x udp-custom.sh && ./udp-custom.sh
+wget -q http
+chmod +x udp-custom.sh 
+bash udp-custom.sh
+rm -fr udp-custom.sh
 print_success "Udp-custom"
 }
 clear
@@ -1002,7 +1013,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ SCRIPT BY SANAK STORE ]-==============="
+echo "===============-[ SCRIPT BY ULTRA STORE ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
