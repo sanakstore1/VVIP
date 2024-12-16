@@ -263,7 +263,7 @@ clear
 
 clear
 #GANTI PASSWORD DEFAULT
-restart_system(){
+restart_system() {
 #IZIN SCRIPT
 curl "ipinfo.io/org?token=7a814b6263b02c" > /root/.isp 
 curl "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
